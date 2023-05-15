@@ -15,7 +15,7 @@ resource "ibm_network_vlan" "segment_100" {
   tags = var.tags
 }
 
-resource "ibm_network_vlan" "sgement_101" {
+resource "ibm_network_vlan" "segment_101" {
   name       = "${var.project}-dev-segment-101"
   datacenter = var.datacenter
   type       = "PRIVATE"
