@@ -33,6 +33,7 @@ locals {
 module "vlans" {
   source     = "./modules/vlans"
   datacenter = var.datacenter
+  project = var.project
   tags       = local.tags
 }
 
