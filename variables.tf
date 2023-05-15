@@ -32,28 +32,28 @@ variable "domain_name" {
   default     = "example.com"
 }
 
-variable "vsicount" {
-  description = "Number of VSI systems"
-  type        = string
-  default     = "1"
-}
+#variable "vsicount" {
+#  description = "Number of VSI systems"
+#  type        = string
+#  default     = "1"
+#}
 
-variable "psgids" {
-  description = "public security group ids VSI systems"
-  type        = list
-  default     = []
-}
+#variable "psgids" {
+#  description = "public security group ids VSI systems"
+#  type        = list
+#  default     = []
+#}
 
 #variable "vm-post-install-script-uri" {
 # default = "https://binaries.twingate.com/connector/setup.sh"
 #}
 
 
-variable "vsi_private_vlan" {
-  description = "Private VLAN of VSI systems"
-  type        = string
-  default     = ""
-}
+#variable "vsi_private_vlan" {
+#  description = "Private VLAN of VSI systems"
+#  type        = string
+#  default     = ""
+#}
 
 
 
