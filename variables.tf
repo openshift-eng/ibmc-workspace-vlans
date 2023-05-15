@@ -26,11 +26,11 @@ variable "project" {
 #  default     = ""
 #}
 
-#variable "domain_name" {
-#  description = "The domain name to use for all resources."
-#  type        = string
-#  default     = "example.com"
-#}
+variable "domain_name" {
+  description = "The domain name to use for all resources."
+  type        = string
+  default     = "example.com"
+}
 
 #variable "vsicount" {
 #  description = "Number of VSI systems"
