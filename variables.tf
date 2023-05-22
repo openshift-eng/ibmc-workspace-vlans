@@ -55,5 +55,9 @@ variable "project" {
 #  default     = ""
 #}
 
-
+variable "gateway_id" {
+  description = "ID of gateway systems"
+  type        = string
+  default     = ""
+}
 
