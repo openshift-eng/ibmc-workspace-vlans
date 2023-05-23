@@ -34,6 +34,7 @@ module "vlans" {
   source     = "./modules/vlans"
   datacenter = var.datacenter
   project = var.project
+  gateway_id = var.gateway_id
   tags       = local.tags
 }
 
