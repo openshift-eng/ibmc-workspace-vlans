@@ -6,6 +6,23 @@
 #  tags       = var.tags
 #}
 
+
+############# This is special use for the "dal10-private vlan"
+
+resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_dal10_private" {
+  gateway_id      = var.gateway_id
+  network_vlan_id = var.network_vlan_id_dal10_private
+  bypass          = false
+}
+
+############# This is special use for the "dal10-private vlan"
+
+
+
+
+
+
+
 resource "ibm_network_vlan" "segment_100" {
   name       = "${var.project}-dev-segment-100"
   datacenter = var.datacenter

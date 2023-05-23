@@ -35,6 +35,7 @@ module "vlans" {
   datacenter = var.datacenter
   project = var.project
   gateway_id = var.gateway_id
+  network_vlan_id_dal10_private = var.network_vlan_id_dal10_private
   tags       = local.tags
 }
 
