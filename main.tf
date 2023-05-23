@@ -38,11 +38,6 @@ module "vlans" {
   tags       = local.tags
 }
 
-resource "ibm_network_gateway_vlan_association" "gateway_vlan_association" {
-  gateway_id      = ibm_network_gateway.gateway.id
-  network_vlan_id = 645086
-}
-
 
 #module "virtual-machines" {
 ##  depends_on   = [module.vlans]
