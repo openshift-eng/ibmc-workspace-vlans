@@ -18,7 +18,7 @@ resource "ibm_network_vlan" "segment_100" {
 
 resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
   gateway_id      = var.gateway_id 
-  network_vlan_id = ibm_network_vlan.segment_100.vlan_number
+  network_vlan_id = ibm_network_vlan.segment_100.id
   bypass          = false
 }
 
@@ -34,7 +34,7 @@ resource "ibm_network_vlan" "segment_101" {
 
 resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_101" {
   gateway_id      = var.gateway_id
-  network_vlan_id = ibm_network_vlan.segment_101.vlan_number
+  network_vlan_id = ibm_network_vlan.segment_101.id
   bypass          = false
 }
 
