@@ -61,8 +61,8 @@ variable "gateway_id" {
   default     = ""
 }
 
-variable "network_vlan_id_dal10_private" {
-  description = "vlan id of dal10-private"
+variable "network_vlan_id_dal_private" {
+  description = "vlan id of dal-private"
   type        = string
   default     = ""
 }
