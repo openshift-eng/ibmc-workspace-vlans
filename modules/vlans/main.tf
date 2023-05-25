@@ -24,7 +24,7 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_dal_pr
 
 
 resource "ibm_network_vlan" "segment_100" {
-  name       = "${var.project}-dev-segment-100"
+  name       = "${var.project}-devqe-segment-100"
   datacenter = var.datacenter
   type       = "PRIVATE"
   router_hostname = "bcr01a.${var.datacenter}"
@@ -41,7 +41,7 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
 
 
 resource "ibm_network_vlan" "segment_101" {
-  name       = "${var.project}-dev-segment-101"
+  name       = "${var.project}-devqe-segment-101"
   datacenter = var.datacenter
   type       = "PRIVATE"
   router_hostname = "bcr01a.${var.datacenter}"
