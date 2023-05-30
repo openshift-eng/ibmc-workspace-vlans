@@ -13,7 +13,7 @@ output "segment_100" {
   value = ibm_network_vlan.segment_100
 }
 
-#output "segment_101" {
-#  description = "Returns the private VLAN info."
-#  value = ibm_network_vlan.segment_101
-#}
+output "segment_101" {
+  description = "Returns the private VLAN info."
+  value = ibm_network_vlan.segment_101
+}
