@@ -76,9 +76,9 @@ resource "ibm_network_vlan" "segment_222" {
   type       = "PRIVATE"
   router_hostname = "bcr01a.${var.datacenter}"
   tags = var.tags
-  lifecycle {
-    ignore_changes = [ name ]
-    }
+#  lifecycle {
+#    ignore_changes = [ name ]
+#    }
 }
 
 
