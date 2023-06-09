@@ -81,4 +81,8 @@ resource "ibm_network_vlan" "segment_222" {
 #    }
 }
 
-
+resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_222" {
+  gateway_id      = var.gateway_id
+  network_vlan_id = ibm_network_vlan.segment_222.id
+  bypass          = false
+}
