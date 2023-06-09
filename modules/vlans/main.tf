@@ -23,7 +23,7 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_dal_pr
 
 
 
-resource "ibm_network_vlan" "segment_221" {
+resource "ibm_network_vlan" "segment_100" {
   name       = "${var.project}-segment-221"
   datacenter = var.datacenter
   type       = "PRIVATE"
@@ -40,7 +40,7 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
 }
 
 
-resource "ibm_network_vlan" "segment_222" {
+resource "ibm_network_vlan" "segment_101" {
   name       = "${var.project}-segment-222"
   datacenter = var.datacenter
   type       = "PRIVATE"
