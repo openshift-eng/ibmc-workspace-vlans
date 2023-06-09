@@ -64,4 +64,10 @@ moved {
   to = ibm_network_gateway_vlan_association.gateway_vlan_association_222
 }
 
-
+resource "ibm_network_vlan" "segment_222" {
+  name       = "${var.project}-segment-222"
+  datacenter = var.datacenter
+  type       = "PRIVATE"
+  router_hostname = "bcr01a.${var.datacenter}"
+  tags = var.tags
+}
