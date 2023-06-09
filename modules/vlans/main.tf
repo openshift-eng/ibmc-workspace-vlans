@@ -59,15 +59,15 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
 #}
 
 
-moved {
-  from = ibm_network_vlan.segment_101
-  to = ibm_network_vlan.segment_222
-}
-
-moved {
-  from = ibm_network_gateway_vlan_association.gateway_vlan_association_101
-  to = ibm_network_gateway_vlan_association.gateway_vlan_association_222
-}
+#moved {
+#  from = ibm_network_vlan.segment_101
+#  to = ibm_network_vlan.segment_222
+#}
+#
+#moved {
+#  from = ibm_network_gateway_vlan_association.gateway_vlan_association_101
+#  to = ibm_network_gateway_vlan_association.gateway_vlan_association_222
+#}
 
 
 resource "ibm_network_vlan" "segment_222" {
