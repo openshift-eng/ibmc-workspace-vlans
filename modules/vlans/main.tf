@@ -19,7 +19,12 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_dal_pr
 
 
 
-
+locals {
+ vlansegments = {
+   "221" = { resource = "segment_221", name = "sgement-221", association = "gateway_vlan_association_221" },
+   "222" = { resource = "segment_222", name = "sgement-222", association = "gateway_vlan_association_222" }
+ }
+}
 
 
 
@@ -31,7 +36,6 @@ resource "ibm_network_vlan" "segment_100" {
 #  router_hostname = replace(ibm_network_vlan.public.router_hostname, "/^f/", "b")
   tags = var.tags
 }
-
 
 resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
   gateway_id      = var.gateway_id 
@@ -54,6 +58,7 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_100" {
 #  bypass          = false
 #}
 
+
 moved {
   from = ibm_network_vlan.segment_101
   to = ibm_network_vlan.segment_222
@@ -64,10 +69,16 @@ moved {
   to = ibm_network_gateway_vlan_association.gateway_vlan_association_222
 }
 
+
 resource "ibm_network_vlan" "segment_222" {
   name       = "${var.project}-segment-222"
   datacenter = var.datacenter
   type       = "PRIVATE"
   router_hostname = "bcr01a.${var.datacenter}"
   tags = var.tags
+  lifecycle {
+    ignore_changes = [ name, ]
+    }
 }
+
+
