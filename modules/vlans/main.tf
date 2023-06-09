@@ -54,3 +54,8 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_101" {
   bypass          = false
 }
 
+moved {
+      from = ibm_network_vlan.segment_101
+           to = ibm_network_vlan.segment_222
+}
+
