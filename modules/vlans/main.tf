@@ -201,21 +201,6 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_228" {
 }
 
 
-resource "ibm_network_vlan" "segment_228" {
-  name       = "${var.project}-segment-228"
-  datacenter = var.datacenter
-  type       = "PRIVATE"
-  router_hostname = "bcr01a.${var.datacenter}"
-  tags = var.tags
-}
-
-resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_228" {
-  gateway_id      = var.gateway_id
-  network_vlan_id = ibm_network_vlan.segment_228.id
-  bypass          = false
-}
-
-
 resource "ibm_network_vlan" "segment_229" {
   name       = "${var.project}-segment-229"
   datacenter = var.datacenter
