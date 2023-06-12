@@ -43,15 +43,15 @@ locals {
 #  bypass          = false
 #}
 
-moved {
-  from = ibm_network_vlan.segment_100
-  to = ibm_network_vlan.segment_221
-}
-
-moved {
-  from = ibm_network_gateway_vlan_association.gateway_vlan_association_100
-  to = ibm_network_gateway_vlan_association.gateway_vlan_association_221
-}
+#moved {
+#  from = ibm_network_vlan.segment_100
+#  to = ibm_network_vlan.segment_221
+#}
+#
+#moved {
+#  from = ibm_network_gateway_vlan_association.gateway_vlan_association_100
+#  to = ibm_network_gateway_vlan_association.gateway_vlan_association_221
+#}
 #### needed to fix
 
 
