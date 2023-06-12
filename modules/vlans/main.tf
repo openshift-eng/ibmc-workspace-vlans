@@ -20,10 +20,29 @@ resource "ibm_network_gateway_vlan_association" "gateway_vlan_association_dal_pr
 
 
 locals {
- vlansegments = {
-   "223" = { resource = "segment_223", name = "sgement-223", association = "gateway_vlan_association_223" }
+ vlansegments = ["223", "224"] 
  }
+
+
+
+resource "ibm_network_vlan" "segment" {
+  for_each = toset(local.vlansegments)
+  name       = "${var.project}-segment-${each.value}"
+  datacenter = var.datacenter
+  type       = "PRIVATE"
+  router_hostname = "bcr01a.${var.datacenter}"
+  tags = var.tags
 }
+
+resource "ibm_network_gateway_vlan_association" "gateway_vlan_association" {
+  for_each = toset(local.vlansegments)
+  gateway_id      = var.gateway_id
+  network_vlan_id = "ibm_network_vlan.segment_${each.value}.id"
+  bypass          = false
+}
+
+
+
 
 
 
